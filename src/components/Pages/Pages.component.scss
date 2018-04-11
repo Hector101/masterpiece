@@ -1,0 +1,88 @@
+.flipbook-viewport{
+  .container {
+    .next-button,
+    .prev-button {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      z-index: 1000;
+      cursor: pointer;
+    }
+
+    .next-button {
+      right: 0;
+      top: 50%;
+      width: 0; 
+      height: 0; 
+      border-top: 30px solid transparent;
+      border-bottom: 30px solid transparent;
+      border-left: 30px solid rgb(146, 146, 231);
+    }
+    
+    .prev-button {
+      left: 0;
+      top: 50%;
+      width: 0; 
+      height: 0; 
+      border-top: 30px solid transparent;
+      border-bottom: 30px solid transparent; 
+      border-right: 30px solid rgb(146, 146, 231);
+    }
+
+
+    .flipbook {
+      &.animated {
+        transition: margin-left 0.5s;
+      }
+      
+      .book-wrapper {
+        width: 100%;
+
+        .book-container {
+          width: 100%;
+          height: 100vh;
+          background-color: #FBF8EF;
+          text-justify: newspaper;
+
+          .book-content {
+            width: 80%;
+            background: transparent;
+            margin: 0 auto;
+            text-align: justify;
+            text-justify: newspaper;
+            transform: translateY(10%);
+          }
+
+          &.book-container-odd {
+            background-image: linear-gradient(to right, #fff 95%, #cacaca 100%);
+            background-color: rgb(243, 232, 211);
+          }
+          
+          &.book-container-even {
+            background-image: linear-gradient(to left, #fff 95%, #dadada 100%);
+            background-color: rgb(243, 232, 211);
+          }
+        }
+      }
+
+      .hard-cover-front {
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(212, 173, 53);
+      }
+
+      .hard-cover-back {
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(235, 198, 125);
+      }
+    }
+
+    .bottom {
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:100%;
+    }
+  }
+}
